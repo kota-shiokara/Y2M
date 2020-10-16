@@ -1,0 +1,25 @@
+{
+    "name": "Youtube Music Mover",
+    "short_name": "Y2M",
+    "version": "0.0.1",
+    "description": "Youtube Music Mover",
+	"permissions": [
+        "http://*/*",
+        "https://*/*",
+        "tabs",
+        "activeTab"
+	],
+	"browser_action": {
+        "default_title": "Y2M",
+        "default_icon": {
+            "16": "images/icon16.png"
+        },
+        "name": "Y2M"
+    },
+    "background": {
+        "scripts": ["y2m.js"],
+        "persistent": false
+    },
+    "author": "Ikanoshiokara",
+    "manifest_version": 2
+}
