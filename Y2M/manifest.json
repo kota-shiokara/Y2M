@@ -1,7 +1,7 @@
 {
     "name": "Youtube Music Mover",
     "short_name": "Y2M",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "description": "Youtube Music Mover",
 	"permissions": [
         "http://*/*",
