@@ -1,5 +1,4 @@
-chrome.browserAction.onClicked.addListener(
-    function (tab) {
+chrome.action.onClicked.addListener((tab) => {
         var yturl = tab.url;
         console.log(tab.url);
         if (yturl.indexOf('www.youtube.com/watch') != -1) {
@@ -32,5 +31,4 @@ chrome.browserAction.onClicked.addListener(
         } else {
             alert("Move failed to youtube music");
         }
-    }
-);
+});
