@@ -9,14 +9,16 @@
         "scripting"
 	],
     "host_permissions": [
-        "http://*/*",
         "https://www.youtube.com/*",
         "https://music.youtube.com/*"
     ],
 	"action": {
         "default_title": "Y2M",
         "default_icon": {
-            "16": "images/icon16.png"
+            "16": "images/y2m_icon16.png",
+            "32": "images/y2m_icon32.png",
+            "48": "images/y2m_icon48.png",
+            "128": "images/y2m_icon128.png"
         },
         "name": "Y2M"
     },
