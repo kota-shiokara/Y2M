@@ -1,7 +1,7 @@
 # Y2M
 <p align="center"><img alt="Y2M" src="https://raw.githubusercontent.com/kota-shiokara/Y2M/main/images/y2m_icon256.png"/></p>
 
-This is a Chrome Extension that to play Youtube videos on Youtube Music(hereinafter referred to as Music).
+This is a Chrome Extension that to play Youtube videos on Youtube Music(hereinafter referred to as Music).  
 これはYoutubeの動画をYoutube Music(以下Musicと呼ぶ)で再生するためのChrome拡張機能です。
 
 ## 使い方
