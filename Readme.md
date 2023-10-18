@@ -1,17 +1,20 @@
 # Y2M
-This is a Chrome Extension that to play Youtube videos on Youtube music.
-(Can also do the opposite.)  
-これはYoutubeの動画をYoutube Musicで再生するためのChrome拡張機能です。(逆のことも可能です。)
+This is a Chrome Extension that to play Youtube videos on Youtube Music(hereinafter referred to as Music).
+これはYoutubeの動画をYoutube Music(以下Musicと呼ぶ)で再生するためのChrome拡張機能です。
 
 ## 使い方
-1. なんらかの方法でこのリポジトリをPCにダウンロードする。(cloneが一番早いと思います)  
-2. Chrome拡張機能(chrome://extensions/)のデベロッパーモードを有効にし、`パッケージ化されていない拡張機能を読み込む`からこのReadme.mdと同じ階層のY2Mフォルダを選択。  
-3. Youtubeで動画の視聴もしくはYoutube Musicで音声の再生をしている状態で拡張機能のアイコンをクリックします。  
-4. (Youtube Musicから移動する場合、クリックした時に出現するポップアップでキャンセルを選択するとYoutubeに移動します。OKを選択するとTwitterのツイート画面に移動します。)  
+1. `Release`から最新のフォルダをダウンロードして下さい。その後zipなどの圧縮されているフォルダを解凍して下さい。  
+2. Chrome拡張機能(chrome://extensions/)のデベロッパーモードを有効にし、`パッケージ化されていない拡張機能を読み込む`から解凍したY2Mフォルダを選択。  
+3. Youtubeで動画の視聴もしくはMusicで音声の再生をしている状態で拡張機能のアイコンをクリックします。
+	1. Youtubeの場合、Musicに移動します。
+	2. Musicの場合、X(旧Twitter)のツイート画面に移動します。
 
 ## 仕様上の注意
-Youtubeの動画が全てYoutube Musicで再生できるわけではないので、もし再生出来なかった場合はYoutubeで我慢しましょう。
+Youtubeの動画は、
+- 投稿が直近で、(恐らく)Musicでの処理ができていない
+- Musicにて何らかの理由で処理できていない
 
+の理由でMusicで再生できないことがあります。
 ## Author
 - [kota-shiokara](https://github.com/kota-shiokara)
 - Email: ikanoshiokara.fun@gmail.com
