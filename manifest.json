@@ -6,7 +6,8 @@
 	"permissions": [
         "tabs",
         "activeTab",
-        "scripting"
+        "scripting",
+        "notifications"
 	],
     "host_permissions": [
         "https://www.youtube.com/*",

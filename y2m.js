@@ -1,34 +1,45 @@
+// 基本的にこれは裏で動くスクリプトになる
 chrome.action.onClicked.addListener((tab) => {
-        var yturl = tab.url;
-        console.log(tab.url);
-        if (yturl.indexOf('www.youtube.com/watch') != -1) {
+    const yturl = tab.url;
+
+    switch (true) {
+        case yturl.indexOf('www.youtube.com/watch') != -1:
             // Youtubeでの処理
-            var result = yturl.substring(yturl.indexOf('watch'));
-            if (result.indexOf('&') != -1) result = result.substring(0, result.indexOf('&'));
-
-            window.open("https://music.youtube.com/" + result);
-        } else if (yturl.indexOf('music.youtube.com/watch') != -1) {
+            const result = getVideoId(yturl);
+            createTab("https://music.youtube.com/" + result);
+            break;
+        case yturl.indexOf('music.youtube.com/watch') != -1:
             // Youtube Musicでの処理
-            if (confirm("共有しますか")) {
-                var tweetText = tab.title;
-                tweetText = tweetText.substring(0, tweetText.indexOf("- YouTube Music"));
+            chrome.scripting.executeScript({
+                target: { tabId: tab.id },
+                func: () => {
+                    // ここは表で動くScript
+                    const titleTag = document.getElementsByClassName("title ytmusic-player-bar");
+                    const titleText = titleTag[0].textContent;
 
-                var result = yturl.substring(yturl.indexOf('watch'));
-                if (result.indexOf('&') != -1) result = result.substring(0, result.indexOf('&'));
-
-                var tweetUrl = "https://youtube.com/" + result;
-
-                window.open("https://twitter.com/intent/tweet?text=" + tweetText + "&url=" + tweetUrl + "&via=YouTube");
-
-            } else {
-                if (confirm("YouTubeに移動しますか")) {
+                    const yturl = document.URL;
                     var result = yturl.substring(yturl.indexOf('watch'));
                     if (result.indexOf('&') != -1) result = result.substring(0, result.indexOf('&'));
 
-                    window.open("https://youtube.com/" + result);
-                }
-            }
-        } else {
-            alert("Move failed to youtube music");
-        }
+                    var url = "https://youtube.com/" + result;
+
+                    open("https://twitter.com/intent/tweet?text=" + titleText + "&url=" + url + "&via=YouTube");
+                },
+            });
+            break;
+        default:
+            console.log("Function Failed");
+            break;
+    }
 });
+
+function createTab(url) {
+    chrome.tabs.create({ url: url }, tab => { });
+}
+
+function getVideoId(content) {
+    var tmp = content.substring(content.indexOf('watch'));
+    if (tmp.indexOf('&') != -1) tmp = tmp.substring(0, tmp.indexOf('&'));
+
+    return tmp;
+}
